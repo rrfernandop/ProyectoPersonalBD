@@ -1,3 +1,4 @@
+/*TABLA CAMPUS */
 CREATE TABLE campus (
     idCampus INT PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(100) NOT NULL,
@@ -6,10 +7,15 @@ CREATE TABLE campus (
     longitud VARCHAR(30) NOT NULL,
     latitud VARCHAR(30) NOT NULL
     
-    
 );
 
+/*TABLA DE CARRERAS */
+CREATE TABLE carrera (
+    idCarrera INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(100) NOT NULL
+);
 
+/*TABLA CON FK */
 CREATE TABLE Oferta (
     idOferta INT PRIMARY KEY AUTO_INCREMENT,
     idCampus INT NOT NULL,
@@ -17,7 +23,4 @@ CREATE TABLE Oferta (
     FOREIGN KEY (idCampus) REFERENCES campus(idCampus),
     FOREIGN KEY (idCarrera) REFERENCES carrera(idCarrera)
 );
-CREATE TABLE carrera (
-    idCarrera INT PRIMARY KEY AUTO_INCREMENT,
-    nombre VARCHAR(100) NOT NULL
-);
+
